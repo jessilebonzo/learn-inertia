@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    
+    'custom_error_pages_enabled' => env('CUSTOM_ERROR_PAGES_ENABLED', false),
 
     /*
     |--------------------------------------------------------------------------

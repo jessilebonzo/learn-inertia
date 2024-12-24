@@ -1,30 +1,13 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import { Head, Link, router, useForm, usePage } from '@inertiajs/vue3';
-import { useToast } from 'vue-toastification';
-import { watch } from 'vue';
+import { Head, Link, router, useForm} from '@inertiajs/vue3';
 
 
-defineProps({
+const props = defineProps({
   posts: Object,
   can: Object,
 }); 
 
-
-const toast = useToast();
-
-const page = usePage();
-
-watch(
-    () => page.props.message,
-    (message) => {
-        if (message) {
-            toast(message.body, {
-                type: message.type,
-            });
-        }
-    }
-);
 
 const form = useForm("StorePost",{
     'body': "", 
@@ -110,3 +93,4 @@ const refreshPosts = () => {
         </div>
     </AuthenticatedLayout>
 </template>
+ 
